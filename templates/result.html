@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analysis Result</title>
+</head>
+<body>
+  <h1>Analysis Result</h1>
+  {% if result.Error %}
+    <p><strong>Error:</strong> {{ result.Error }}</p>
+  {% else %}
+    <ul>
+      <li><strong>File:</strong> {{ result.File }}</li>
+      <li><strong>Speech Rate (words/sec):</strong> {{ result['Speech Rate (w/s)'] }}</li>
+      <li><strong>Pitch Variability:</strong> {{ result['Pitch Variability'] }}</li>
+      <li><strong>Pauses:</strong> {{ result.Pauses }}</li>
+      <li><strong>Hesitations:</strong> {{ result.Hesitations }}</li>
+      <li><strong>Transcript:</strong> {{ result.Transcription }}</li>
+    </ul>
+  {% endif %}
+  <a href="/">Back</a>
+</body>
+</html>
